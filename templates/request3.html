@@ -1,0 +1,47 @@
+ <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <title>Request 3</title>
+  </head>
+  <body>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+
+      <h1>Запит 3: </h1>
+      <h2>Вибрати студентів вказаної спеціальності, середній бал яких дорівнює вказанному.</h2>
+      <hr>
+
+      <form action="/request3" method="POST">
+
+        <div class="form-group">
+          <label>Спеціальність</label>
+          <input type="text" class="form-control" id="speciality" name="speciality" placeholder="Обрати спеціальність">
+        </div>
+
+        <div class="form-group">
+          <label>Оцінка</label>
+          <input type="text" class="form-control" id="mark" name="mark" placeholder="Обрати оцінку">
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Запит</button>
+
+      </form>
+
+      <table>
+        <tbody>
+            {% for row in output_data %}
+                <tr>
+                    <td>{{row[0]}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+  </div>
+</div>
+
+  </body>
+  </html>

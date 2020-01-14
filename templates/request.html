@@ -1,0 +1,186 @@
+ <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <title>Запити</title>
+       <style>
+       body {
+  background-color: white;
+}
+</style>
+  </head>
+
+  <body>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1 style="color:red;text-align:center;">Запит {{output_data[0]}}: </h1>
+      <h2 style="color:orange;text-align:justify;">{{output_data[1]}}</h2>
+      <hr>
+    {% if output_data[0] == 1 %}
+      <form action="/index1" method="POST">
+
+        <div class="form-group">
+          <label>{{output_data[2]}}</label>
+            <select name="group_select1" class="selectpicker form-control">
+              {% for o in data[0] %}
+              <option value="{{ o[0] }}">{{ o[0] }}</option>
+              {% endfor %}
+            </select>
+             <label>{{output_data[3]}}</label>
+            <select name="violation_select1" class="selectpicker form-control">
+              {% for v in data[1] %}
+              <option value="{{ v[0] }}">{{ v[0] }}</option>
+              {% endfor %}
+            </select>
+<!--          <input type="text" class="form-control" id="group" name="group" placeholder="Обрати групу">-->
+        </div>
+
+
+
+        <button type="submit" class="btn btn-primary">Зробити запит</button>
+
+      </form>
+
+{% if data[2]!=None %}
+         <h2>Відповідь:</h2>
+      <table>
+        <tbody>
+            {% for row in data[2] %}
+                <tr>
+                    <td>{{row[0]}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+  {%endif%}
+        {%endif%}
+<!--   1111     -->
+
+
+
+
+
+        {% if output_data[0] == 2 %}
+      <form action="/index1" method="POST">
+
+        <div class="form-group">
+          <label>{{output_data[2]}}</label>
+            <select name="speciality_select2" class="selectpicker form-control">
+              {% for l in data[0] %}
+              <option value="{{ l[0] }}">{{ l[0] }}</option>
+              {% endfor %}
+            </select>
+<!--          <input type="text" class="form-control" id="group" name="group" placeholder="Обрати групу">-->
+        </div>
+
+
+
+        <button type="submit" class="btn btn-primary">Зробити запит</button>
+
+      </form>
+
+{% if data[1]!=None %}
+         <h2>Відповідь:</h2>
+      <table>
+        <tbody>
+            {% for row in data[1] %}
+                <tr>
+                    <td>{{row[0]}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+  {%endif%}
+{%endif%}
+
+
+<!--     2222   -->
+
+        {% if output_data[0] == 4 %}
+      <form action="/index1" method="POST">
+
+        <div class="form-group">
+          <label>{{output_data[2]}}</label>
+            <select name="contract_select4" class="selectpicker form-control">
+              {% for o in data[0] %}
+              <option value="{{ o[0] }}">{{ o[0] }}</option>
+              {% endfor %}
+            </select>
+             <label>{{output_data[3]}}</label>
+            <select name="punish_select4" class="selectpicker form-control">
+              {% for v in data[1] %}
+              <option value="{{ v[0] }}">{{ v[0] }}</option>
+              {% endfor %}
+            </select>
+<!--          <input type="text" class="form-control" id="group" name="group" placeholder="Обрати групу">-->
+        </div>
+
+
+
+        <button type="submit" class="btn btn-primary">Зробити запит</button>
+
+      </form>
+
+{% if data[2]!=None %}
+         <h2>Відповідь:</h2>
+      <table>
+        <tbody>
+            {% for row in data[2] %}
+                <tr>
+                    <td>{{row[0]}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+  {%endif%}
+        {%endif%}
+<!--   3333     -->
+
+        {% if output_data[0] == 3 %}
+      <form action="/index1" method="POST">
+
+        <div class="form-group">
+          <label>{{output_data[2]}}</label>
+            <select name="speciality_select3" class="selectpicker form-control">
+              {% for o in data[0] %}
+              <option value="{{ o[0] }}">{{ o[0] }}</option>
+              {% endfor %}
+            </select>
+             <label>{{output_data[3]}}</label>
+            <select name="mark_select3" class="selectpicker form-control">
+              {% for v in data[1] %}
+              <option value="{{ v[0] }}">{{ v[0] }}</option>
+              {% endfor %}
+            </select>
+<!--          <input type="text" class="form-control" id="group" name="group" placeholder="Обрати групу">-->
+        </div>
+
+
+
+<button type="submit" class="btn btn-primary">Зробити запит</button>
+
+      </form>
+
+{% if data[2]!=None %}
+         <h2>Відповідь:</h2>
+      <table>
+        <tbody>
+            {% for row in data[2] %}
+                <tr>
+                    <td>{{row[0]}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+  {%endif%}
+        {%endif%}
+
+<!--     44444   -->
+
+    </div>
+  </div>
+</div>
+<p style="color:blue;text-align:center;"><a href="{{url_for('index1') }}" >Обрати інший запит</a></p
+  </body>
+  </html>

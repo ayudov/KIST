@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>student_group</title>
+</head>
+<body>
+    <table border="1" cellpadding="5">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Student_ID</th>
+            <th>Putting_date</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for row in output_data %}
+                <tr>
+                    <td>{{row[0]}}</td>
+                    <td>{{row[1]}}</td>
+                    <td>{{row[2]}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+<p style="color:blue;text-align:left;"><a href="{{url_for('index') }}" >Назад</a></p>
+</body>
+</html>

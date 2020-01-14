@@ -1,0 +1,47 @@
+ <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <title>Request 4</title>
+  </head>
+  <body>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+
+      <h1>Запит 4: </h1>
+      <h2>Вибрати студентів вказаного контрактного типу, які отримували вказане покарання</h2>
+      <hr>
+
+      <form action="/request4" method="POST">
+
+        <div class="form-group">
+          <label>Тип контракту</label>
+          <input type="text" class="form-control" id="contract" name="contract" placeholder="Обрати тип контракту">
+        </div>
+
+        <div class="form-group">
+          <label>Покарання</label>
+          <input type="text" class="form-control" id="punish" name="punish" placeholder="Обрати покарання">
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Запит</button>
+
+      </form>
+
+      <table>
+        <tbody>
+            {% for row in output_data %}
+                <tr>
+                    <td>{{row[0]}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+  </div>
+</div>
+
+  </body>
+  </html>
